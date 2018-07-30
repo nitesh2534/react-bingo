@@ -1,0 +1,161 @@
+.App {
+    text-align: center;
+}
+
+.App-logo {
+    animation: App-logo-spin infinite 20s linear;
+    height: 80px;
+}
+
+.App-header {
+    background-color: #222;
+    height: 150px;
+    padding: 20px;
+    color: white;
+}
+
+.App-title {
+    font-size: 1.5em;
+}
+
+.App-intro {
+    font-size: large;
+}
+
+@keyframes App-logo-spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+.Active {
+    background: #1072B8;
+    color: white;
+}
+
+.msg-modal {
+    margin-left: 500px;
+    background-color: white;
+    border: 1px solid;
+    margin-top: 250px;
+    max-width: 500px;
+    border-radius: 5px;
+    height: 300px;
+}
+
+.modal-submit {
+    height: 50px;
+    width: 150px;
+    border-radius: 5px;
+    margin-left: 120px;
+    margin-top: 120px;
+}
+
+.Number {
+    border: 1px solid #EEF2F5;
+    display: inline-block;
+    padding: 3% 1.2%;
+    width: 17%;
+}
+
+.GameManagerContainer {
+    background: #E1E6EA;
+    margin: 0px auto;
+    width:90%;
+}
+
+.CurrentPick {
+    float: left;
+    margin-left: 4%;
+    padding: 2% 0;
+    width: 40%;
+}
+
+.CurrentNumberText {
+    color: #536970;
+    display: inline-block;
+    font-size: 16px;
+}
+
+.CurrentNumber {
+    background: #FFFFFF;
+    border: 1px solid #1072B8;
+    border-radius: 5px;
+    color: #1072B8;
+    display: inline-block;
+    font-size: 20px;
+    font-weight: bold;
+    margin-left: 3%;
+    padding: 5px;
+    width: 8%;
+}
+
+.PreviousBalls {
+    float: left;
+    width: 40%;
+}
+
+.PreviousBallsText {
+    color: #536970;
+    font-size: 14px;
+    margin-left: 10px;
+    padding: 2% 0;
+    text-align: left;
+}
+
+.PreviousBallsNumbers {
+    background: #E1E6EA;
+    color: #8B9A9F;
+    text-align: left;
+}
+
+.PreviousBallsNumbers>div {
+    background: #FFFFFF;
+    border: 1px solid #1072B8;
+    border-radius: 3px;
+    display: inline-block;
+    margin-left: 10px;
+    padding: 1%;
+}
+
+.Button {
+    float: left;
+    margin-top: 2%;
+    width: 10%;
+}
+
+.Button>button {
+    background: #1072B8;
+    border: 1px solid transparent;
+    border-radius: 5px;
+    color: #FFFFFF;
+    cursor: pointer;
+    font-size: 14px;
+    height: 29px;
+    line-height: 27px;
+    max-width: 480px;
+    padding: 0 16px;
+    text-align: center;
+    white-space: nowrap;
+}
+
+.Clear {
+    clear: both;
+}
+
+.TicketContainer {
+    background: #EEF2F5;
+    margin: 0px auto;
+    width:90%;
+}
+
+.Ticket {
+    background: #FFFFFF;
+    border: 1px solid #EEF2F5;
+    display: inline-block;
+    margin: 2%;
+    width: 45%;
+}
+
+.TicketButton {
+    text-align: center;
+}
