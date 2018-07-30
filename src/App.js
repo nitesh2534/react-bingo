@@ -57,21 +57,23 @@ class App extends Component {
         if (event.currentTarget.getAttribute('data-numbers')) {
             selectedNumbers = JSON.parse(event.currentTarget.getAttribute('data-numbers'));
         }
-        if (event.currentTarget.getAttribute('data-playerName')) {
-            playerName = event.currentTarget.getAttribute('data-playerName');
+        if (event.currentTarget.getAttribute('data-playername')) {
+            playerName = event.currentTarget.getAttribute('data-playername');
         }
-        console.log(playerName);
-        axios.post('http://localhost:8080/checkBingo', {
-            selectedNumbers
-        })
-            .then((response) => {
+        if(selectedNumbers.length !==25){
+            this.setState({showModal : true,playerName:'Not a winning ticket'});
+        } else {
+            axios.post('http://localhost:8080/checkBingo', {
+                selectedNumbers
+            }).then((response) => {
                 if (response.data) {
-                    if(response.data.msg){
-                    document.getElementById('play-btn').style.color = 'red';
+                    if (response.data.msg === 'user has won the game') {
+                        document.getElementById('play-btn').style.color = 'red';
                     }
-                    this.setState({showModal : true,playerName});
+                    this.setState({showModal: true, playerName: playerName + response.data.msg});
                 }
             });
+        }
     }
 
     getNextNumber() {
@@ -80,7 +82,7 @@ class App extends Component {
         axios.get('http://localhost:8080/getRandomNumber',options)
             .then((response) => {
                 if(response.data.msg){
-                    alert(response.data.msg);
+                    this.setState({showModal : true,playerName:response.data.msg});
                     this.setState({
                         currentPick: null,
                         previousPicks: [],
@@ -140,7 +142,7 @@ class App extends Component {
                     { ticket }
                 </div>
                 <div className="Button TicketButton">
-                    <button data-numbers={selectedNumbers} data-playerName = {name} key={selectedNumbers} onClick={this.checkIfBingo}>Check</button>
+                    <button data-numbers={selectedNumbers} data-playername = {name} key={selectedNumbers} onClick={this.checkIfBingo}>Check</button>
                 </div>
             </div>
             tickets.push(ticketElem);
